@@ -1,0 +1,65 @@
+<style type="text/css">
+body{
+	background-image: url(<%= image_path "background-im.jpg" %>);
+	background-size:100%;
+}
+#main{
+	width:500px;
+	margin:0 auto;
+}
+#main .header{
+	background-color:#f2f2f2;
+	border-top-left-radius:10px;
+	-moz-top-left-radius:10px;
+	-webkit-top-left-radius:10px;
+	border-top-right-radius:10px;
+	-moz-top-right-radius:10px;
+	-webkit-top-right-radius:10px;
+	padding:20px;
+}
+#main .inner-main{
+	background-color:#f2f2f2;
+	padding:20px;
+}
+#main .footer{
+	background-color:pink;
+	border-bottom-left-radius:10px;
+	-moz-bottom-left-radius:10px;
+	-webkit-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	-moz-bottom-right-radius:10px;
+	-webkit-bottom-right-radius:10px;
+	padding:20px;
+	cursor:pointer;
+}
+#main .footer:hover{
+	background-color:pink;
+}
+#main .footer .inside-t{
+	font-size:25px;
+	color:white;
+	font-weight:bold;
+	
+}
+#main .inner-main .todo-text{
+	font-size:23px;
+}
+</style>
+
+<p id="notice"><%= notice %></p>
+
+<div id="main">
+	<div class="header">
+		<center><h2>Todoist, please acquire us!</h2></center>
+	</div>
+	<div class="inner-main">
+		<%= render 'form' %>
+	</div>
+	<%= link_to new_item_path, style:"text-decoration:none;" do %>
+		<div class="footer">
+			<center>
+				<span class="inside-t" style="text-decoration:none;">NEW ITEM</span>
+			</center>
+		</div>
+	<% end %>
+</div>

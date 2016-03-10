@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<style type="text/css">
+.main2{
+	padding:20px;
+	background-color:rgba(242, 242, 242, .6);
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	width:515px;
+	padding-bottom:30px;
+	margin:0 auto;
+}
+</style>
+<div class="main2">
+	<%= yield %>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<style type="text/css">
+body{
+	background-image: url(<%= image_path "background-im.jpg" %>);
+	background-size:100%;
+}
+#main{
+	width:500px;
+	margin:0 auto;
+}
+#main .header{
+	background-color:#f2f2f2;
+	border-top-left-radius:10px;
+	-moz-top-left-radius:10px;
+	-webkit-top-left-radius:10px;
+	border-top-right-radius:10px;
+	-moz-top-right-radius:10px;
+	-webkit-top-right-radius:10px;
+	padding:20px;
+}
+#main .inner-main{
+	background-color:#f2f2f2;
+	padding:20px;
+}
+#main .footer{
+	background-color:pink;
+	border-bottom-left-radius:10px;
+	-moz-bottom-left-radius:10px;
+	-webkit-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	-moz-bottom-right-radius:10px;
+	-webkit-bottom-right-radius:10px;
+	padding:20px;
+	cursor:pointer;
+}
+#main .footer:hover{
+	background-color:pink;
+}
+#main .footer .inside-t{
+	font-size:25px;
+	color:white;
+	font-weight:bold;
+	
+}
+#main .inner-main .todo-text{
+	font-size:23px;
+}
+</style>
+<center>
+	<p id="notice"><%= notice %></p>
+</center>
+<div id="main">
+	<div class="header">
+		<center><h2>Todoist, please acquire us!</h2></center>
+	</div>
+	<div class="inner-main">
+		<table border="0" width="100%" cellpadding="10">
+		  <tbody>
+		    <% @items.each do |item| %>
+		      <tr>
+			    <td width="25px;">
+				    <%= link_to item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+						<%= image_tag "check.png", style:"width:20px; height:20px; padding-top:2px;" %>
+					<% end %>
+				</td>
+			    <td><span class="todo-text"><%= item.item_text %></span></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+	<%= link_to new_item_path, style:"text-decoration:none;" do %>
+		<div class="footer">
+			<center>
+				<span class="inside-t" style="text-decoration:none;">NEW ITEM</span>
+			</center>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,24 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <table border="0" width="100%;">
+	<tr>
+		<td width="75%">
+			<%= f.text_field :item_text, placeholder: "What do you gotta do?", style: "font-size:20px; height:30px; width:315px; padding:5px;" %>
+		</td>
+		<td width="20%;">
+			<%= f.submit "Add", style: "font-size:30px; height:30px; width:75px; padding:5px;" %>
+		</td>
+	</tr>
+  </table>
+<% end %>
